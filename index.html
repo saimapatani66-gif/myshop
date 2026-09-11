@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Shop</title>
+
+<title>My Shop | Online Store</title>
 
 <style>
 *{
@@ -14,63 +15,115 @@
 }
 
 body{
-    background:#f5f5f5;
+    background:#f7f7f7;
     color:#222;
 }
 
 header{
     background:#111;
     color:white;
-    padding:18px;
+    padding:16px 6%;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
 }
 
 .cart{
     background:white;
     color:#111;
-    padding:10px 15px;
-    border-radius:20px;
+    padding:10px 16px;
+    border-radius:25px;
+    font-weight:bold;
 }
 
 .hero{
-    background:#222;
+    background:linear-gradient(135deg,#111,#444);
     color:white;
     text-align:center;
-    padding:55px 15px;
+    padding:70px 20px;
 }
 
-.hero h2{
-    font-size:32px;
-    margin-bottom:10px;
+.hero h1{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.shop-btn{
+    display:inline-block;
+    background:white;
+    color:#111;
+    padding:13px 25px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.section-title{
+    text-align:center;
+    padding:35px 15px 15px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.search-box{
+    max-width:600px;
+    margin:20px auto;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:25px;
+    font-size:16px;
 }
 
 .products{
     max-width:1100px;
     margin:auto;
-    padding:30px 20px;
+    padding:20px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
 }
 
 .product{
     background:white;
     padding:18px;
-    border-radius:12px;
+    border-radius:15px;
     text-align:center;
-    box-shadow:0 3px 10px #ccc;
+    box-shadow:0 4px 15px #ddd;
+    transition:.2s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
 }
 
 .product-img{
-    height:180px;
-    background:#ddd;
-    border-radius:10px;
+    height:190px;
+    background:#eee;
+    border-radius:12px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:65px;
+    font-size:70px;
     margin-bottom:15px;
 }
 
@@ -78,10 +131,15 @@ header{
     margin-bottom:8px;
 }
 
+.product p{
+    color:#666;
+    font-size:14px;
+}
+
 .price{
-    font-size:21px;
+    font-size:22px;
     font-weight:bold;
-    margin:12px;
+    margin:15px;
 }
 
 button{
@@ -89,8 +147,9 @@ button{
     color:white;
     border:0;
     padding:12px 20px;
-    border-radius:7px;
+    border-radius:8px;
     cursor:pointer;
+    font-weight:bold;
 }
 
 button:hover{
@@ -98,30 +157,65 @@ button:hover{
 }
 
 .checkout{
-    max-width:500px;
-    margin:20px auto 40px;
+    max-width:550px;
+    margin:35px auto;
     background:white;
-    padding:25px;
-    border-radius:12px;
+    padding:28px;
+    border-radius:15px;
+    box-shadow:0 4px 15px #ddd;
 }
 
 .checkout h2{
     margin-bottom:15px;
 }
 
+.total{
+    background:#f1f1f1;
+    padding:15px;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
 .checkout input{
     width:100%;
-    padding:13px;
+    padding:14px;
     margin:7px 0;
     border:1px solid #ccc;
-    border-radius:7px;
+    border-radius:8px;
+}
+
+.order-btn{
+    width:100%;
+    margin-top:10px;
+    padding:14px;
+}
+
+.empty{
+    text-align:center;
+    color:#777;
+    padding:20px;
 }
 
 footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
+    margin-top:40px;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:32px;
+    }
+
+    header{
+        padding:14px 4%;
+    }
+
+    .logo{
+        font-size:20px;
+    }
 }
 </style>
 </head>
@@ -129,7 +223,7 @@ footer{
 <body>
 
 <header>
-    <h1>🛍️ My Shop</h1>
+    <div class="logo">🛍️ My Shop</div>
 
     <div class="cart">
         🛒 Cart:
@@ -138,41 +232,62 @@ footer{
 </header>
 
 <section class="hero">
-    <h2>Welcome to My Shop</h2>
-    <p>Best Products • Best Prices</p>
+    <h1>Welcome to My Shop</h1>
+    <p>Quality Products • Great Prices • Easy Shopping</p>
+    <a href="#products" class="shop-btn">Shop Now</a>
 </section>
+
+<div class="section-title" id="products">
+    <h2>Our Products</h2>
+</div>
+
+<div class="search-box">
+    <input
+        type="text"
+        id="search"
+        placeholder="🔎 Search products..."
+        onkeyup="searchProducts()"
+    >
+</div>
 
 <section class="products">
 
-    <div class="product">
+    <div class="product" data-name="Premium T-Shirt">
         <div class="product-img">👕</div>
         <h3>Premium T-Shirt</h3>
         <p>High quality cotton T-shirt</p>
         <div class="price">Rs. 1500</div>
-
-        <button onclick="addCart(1500)">
+        <button onclick="addCart('Premium T-Shirt',1500)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product">
+    <div class="product" data-name="Sports Shoes">
         <div class="product-img">👟</div>
         <h3>Sports Shoes</h3>
         <p>Comfortable running shoes</p>
         <div class="price">Rs. 3500</div>
-
-        <button onclick="addCart(3500)">
+        <button onclick="addCart('Sports Shoes',3500)">
             Add to Cart
         </button>
     </div>
 
-    <div class="product">
+    <div class="product" data-name="Wireless Headphones">
         <div class="product-img">🎧</div>
         <h3>Wireless Headphones</h3>
         <p>Clear sound and long battery</p>
         <div class="price">Rs. 2500</div>
+        <button onclick="addCart('Wireless Headphones',2500)">
+            Add to Cart
+        </button>
+    </div>
 
-        <button onclick="addCart(2500)">
+    <div class="product" data-name="Smart Watch">
+        <div class="product-img">⌚</div>
+        <h3>Smart Watch</h3>
+        <p>Modern design and useful features</p>
+        <div class="price">Rs. 4500</div>
+        <button onclick="addCart('Smart Watch',4500)">
             Add to Cart
         </button>
     </div>
@@ -183,12 +298,13 @@ footer{
 
     <h2>🛒 Checkout</h2>
 
-    <p>
+    <div class="total">
+        Products:
+        <strong><span id="cartCount2">0</span></strong>
+        <br><br>
         Total:
         <strong>Rs. <span id="total">0</span></strong>
-    </p>
-
-    <br>
+    </div>
 
     <input id="name" type="text" placeholder="Your Name">
 
@@ -196,44 +312,72 @@ footer{
 
     <input id="address" type="text" placeholder="Delivery Address">
 
-    <br><br>
-
-    <button onclick="order()">
+    <button class="order-btn" onclick="order()">
         Place Order
     </button>
 
 </section>
 
 <footer>
-    © 2026 My Shop
+    <p>© 2026 My Shop</p>
+    <p>Thank you for shopping with us ❤️</p>
 </footer>
 
 <script>
 
 let cart = 0;
 let total = 0;
+let cartItems = [];
 
-function addCart(price){
+function addCart(name, price){
 
     cart++;
     total += price;
 
+    cartItems.push({
+        name:name,
+        price:price
+    });
+
     document.getElementById("cartCount").innerText = cart;
+    document.getElementById("cartCount2").innerText = cart;
     document.getElementById("total").innerText = total;
 
-    alert("Product added to cart!");
+    alert(name + " added to cart!");
+}
+
+function searchProducts(){
+
+    let search =
+        document.getElementById("search").value.toLowerCase();
+
+    let products =
+        document.querySelectorAll(".product");
+
+    products.forEach(function(product){
+
+        let name =
+            product.getAttribute("data-name").toLowerCase();
+
+        if(name.includes(search)){
+            product.style.display = "block";
+        }else{
+            product.style.display = "none";
+        }
+
+    });
 }
 
 function order(){
 
     let name =
-        document.getElementById("name").value;
+        document.getElementById("name").value.trim();
 
     let phone =
-        document.getElementById("phone").value;
+        document.getElementById("phone").value.trim();
 
     let address =
-        document.getElementById("address").value;
+        document.getElementById("address").value.trim();
 
     if(name === "" || phone === "" || address === ""){
         alert("Please fill all details!");
@@ -245,11 +389,20 @@ function order(){
         return;
     }
 
+    let productsText = "";
+
+    cartItems.forEach(function(item){
+        productsText +=
+            item.name + " - Rs. " + item.price + "\n";
+    });
+
     alert(
         "✅ Order placed successfully!\n\n" +
         "Customer: " + name +
         "\nPhone: " + phone +
         "\nAddress: " + address +
+        "\n\nProducts:\n" +
+        productsText +
         "\nTotal: Rs. " + total
     );
 }
