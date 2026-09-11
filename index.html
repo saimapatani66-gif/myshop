@@ -1,17 +1,15 @@
-<h1>Hello World from Termux!</h1>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Shop</title>
 
 <style>
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
     font-family:Arial,sans-serif;
 }
 
@@ -29,10 +27,6 @@ header{
     align-items:center;
 }
 
-header h1{
-    font-size:24px;
-}
-
 .cart{
     background:white;
     color:#111;
@@ -44,7 +38,7 @@ header h1{
     background:#222;
     color:white;
     text-align:center;
-    padding:45px 15px;
+    padding:55px 15px;
 }
 
 .hero h2{
@@ -55,17 +49,17 @@ header h1{
 .products{
     max-width:1100px;
     margin:auto;
-    padding:25px;
+    padding:30px 20px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
-cd ~/mywebsite
 }
 
 .product{
     background:white;
     padding:18px;
-    border-radius:12px;    text-align:center;
+    border-radius:12px;
+    text-align:center;
     box-shadow:0 3px 10px #ccc;
 }
 
@@ -152,11 +146,8 @@ footer{
 
     <div class="product">
         <div class="product-img">👕</div>
-
         <h3>Premium T-Shirt</h3>
-
         <p>High quality cotton T-shirt</p>
-
         <div class="price">Rs. 1500</div>
 
         <button onclick="addCart(1500)">
@@ -164,14 +155,10 @@ footer{
         </button>
     </div>
 
-
     <div class="product">
         <div class="product-img">👟</div>
-
         <h3>Sports Shoes</h3>
-
         <p>Comfortable running shoes</p>
-
         <div class="price">Rs. 3500</div>
 
         <button onclick="addCart(3500)">
@@ -179,14 +166,10 @@ footer{
         </button>
     </div>
 
-
     <div class="product">
         <div class="product-img">🎧</div>
-
         <h3>Wireless Headphones</h3>
-
         <p>Clear sound and long battery</p>
-
         <div class="price">Rs. 2500</div>
 
         <button onclick="addCart(2500)">
@@ -207,23 +190,11 @@ footer{
 
     <br>
 
-    <input
-        id="name"
-        type="text"
-        placeholder="Your Name"
-    >
+    <input id="name" type="text" placeholder="Your Name">
 
-    <input
-        id="phone"
-        type="tel"
-        placeholder="Phone Number"
-    >
+    <input id="phone" type="tel" placeholder="Phone Number">
 
-    <input
-        id="address"
-        type="text"
-        placeholder="Delivery Address"
-    >
+    <input id="address" type="text" placeholder="Delivery Address">
 
     <br><br>
 
@@ -237,7 +208,6 @@ footer{
     © 2026 My Shop
 </footer>
 
-
 <script>
 
 let cart = 0;
@@ -246,15 +216,13 @@ let total = 0;
 function addCart(price){
 
     cart++;
-    total = total + price;
+    total += price;
 
     document.getElementById("cartCount").innerText = cart;
-
     document.getElementById("total").innerText = total;
 
     alert("Product added to cart!");
 }
-
 
 function order(){
 
@@ -267,35 +235,26 @@ function order(){
     let address =
         document.getElementById("address").value;
 
-
     if(name === "" || phone === "" || address === ""){
-
         alert("Please fill all details!");
-
         return;
     }
-
 
     if(cart === 0){
-
         alert("Please add a product first!");
-
         return;
     }
-
 
     alert(
         "✅ Order placed successfully!\n\n" +
         "Customer: " + name +
         "\nPhone: " + phone +
+        "\nAddress: " + address +
         "\nTotal: Rs. " + total
     );
-
 }
 
 </script>
 
 </body>
 </html>
-cd ~/mywebsitecd ~/mywebsite
-python -m http.server 8080
