@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saimapatani66-gif.github.io/myshop/sitemap.xml
