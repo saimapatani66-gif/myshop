@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Terms & Conditions - My Shop</title>
+  <meta name="description" content="Read the Terms and Conditions for using My Shop, including shopping, orders, payments, returns and website usage.">
+  <meta name="robots" content="index, follow">
+
+  <title>Terms & Conditions | My Shop</title>
 
   <style>
     * {
@@ -16,70 +19,105 @@
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      color: #222;
+      color: #333;
       line-height: 1.7;
     }
 
-    header {
-      background: #111;
+    .topbar {
+      background: #f85606;
       color: white;
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px;
     }
 
-    header h2 {
-      font-size: 22px;
+    header {
+      background: white;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #f85606;
+      font-size: 26px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
     }
 
     nav a {
-      color: white;
       text-decoration: none;
-      margin-left: 15px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #f85606;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fff, #fff3ec);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 18px;
     }
 
     .container {
-      max-width: 850px;
+      max-width: 1050px;
       margin: 40px auto;
-      padding: 35px 25px;
+      padding: 0 20px;
+    }
+
+    .card {
       background: white;
+      padding: 32px;
+      margin-bottom: 22px;
       border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 34px;
-    }
-
-    h2 {
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    p {
-      color: #555;
+    .card h2 {
+      color: #f85606;
       margin-bottom: 12px;
+      font-size: 22px;
     }
 
-    ul {
-      margin: 10px 0 15px 25px;
+    .card p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      margin: 10px 0 10px 25px;
       color: #555;
     }
 
     footer {
-      background: #111;
-      color: white;
+      background: #222;
+      color: #ccc;
       text-align: center;
-      padding: 25px 15px;
+      padding: 30px 20px;
       margin-top: 50px;
-    }
-
-    footer p {
-      color: white;
     }
 
     footer a {
@@ -88,31 +126,28 @@
       margin: 0 8px;
     }
 
-    @media (max-width: 600px) {
+    footer a:hover {
+      color: #f85606;
+    }
+
+    @media (max-width: 700px) {
       header {
-        padding: 12px 15px;
+        flex-direction: column;
+        gap: 12px;
       }
 
-      header h2 {
-        font-size: 19px;
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      nav a {
-        font-size: 14px;
-        margin-left: 8px;
+      .hero h1 {
+        font-size: 32px;
       }
 
-      .container {
-        margin: 20px 12px;
-        padding: 25px 18px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 19px;
+      .card {
+        padding: 25px 20px;
       }
     }
   </style>
@@ -120,8 +155,12 @@
 
 <body>
 
+  <div class="topbar">
+    🛍️ Welcome to My Shop — Shop Smart, Shop Easy
+  </div>
+
   <header>
-    <h2>🛍️ My Shop</h2>
+    <a href="index.html" class="logo">🛒 My Shop</a>
 
     <nav>
       <a href="index.html">Home</a>
@@ -130,92 +169,176 @@
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>Terms & Conditions</h1>
+    <p>Please read these terms before using My Shop.</p>
+  </section>
+
   <main class="container">
 
-    <h1>Terms & Conditions</h1>
+    <section class="card">
+      <h2>1. Introduction</h2>
+      <p>
+        Welcome to My Shop. By accessing or using this website, you agree
+        to follow these Terms & Conditions. If you do not agree with these
+        terms, please do not use the website.
+      </p>
+    </section>
 
-    <p>
-      Welcome to My Shop. By using this website, you agree to follow
-      these Terms & Conditions.
-    </p>
+    <section class="card">
+      <h2>2. Website Usage</h2>
+      <p>
+        My Shop is intended to provide an online shopping experience and
+        information about products and services.
+      </p>
+      <p>
+        You agree to use the website only for lawful purposes and not to
+        misuse, damage or interfere with the website.
+      </p>
+    </section>
 
-    <h2>Website Use</h2>
+    <section class="card">
+      <h2>3. Products & Prices</h2>
+      <p>
+        We aim to provide accurate product information, descriptions and
+        prices. However, product details, availability and prices may
+        change without prior notice.
+      </p>
+      <p>
+        Product images may be used for illustration and the actual product
+        may vary slightly from the displayed image.
+      </p>
+    </section>
 
-    <p>
-      You agree to use this website for lawful purposes and not to
-      misuse or interfere with the website or its services.
-    </p>
+    <section class="card">
+      <h2>4. Orders</h2>
+      <p>
+        When you place an order, the information you provide should be
+        accurate and complete.
+      </p>
+      <p>
+        We reserve the right to cancel or refuse an order in situations
+        such as incorrect product information, unavailable products,
+        suspected misuse or other legitimate reasons.
+      </p>
+    </section>
 
-    <h2>Products and Prices</h2>
+    <section class="card">
+      <h2>5. Payments</h2>
+      <p>
+        Any payment methods offered by My Shop may be subject to additional
+        terms from the relevant payment provider.
+      </p>
+      <p>
+        Payment features may change as the website develops.
+      </p>
+    </section>
 
-    <p>
-      We try to provide accurate product information and prices.
-      Product availability and prices may change without prior notice.
-    </p>
+    <section class="card">
+      <h2>6. Shipping & Delivery</h2>
+      <p>
+        Delivery times may vary depending on product availability,
+        location, shipping provider and other circumstances.
+      </p>
+      <p>
+        My Shop cannot guarantee a specific delivery time unless it is
+        explicitly stated at the time of purchase.
+      </p>
+    </section>
 
-    <h2>Orders</h2>
+    <section class="card">
+      <h2>7. Returns & Refunds</h2>
+      <p>
+        Returns and refunds are subject to the applicable Refund Policy
+        published on this website.
+      </p>
+      <p>
+        Please review our
+        <a href="refund.html" style="color:#f85606;font-weight:bold;">
+          Refund Policy
+        </a>
+        before placing an order.
+      </p>
+    </section>
 
-    <p>
-      Placing an order through the website does not necessarily mean
-      that the order has been accepted. We may contact the customer
-      to confirm order details before processing it.
-    </p>
+    <section class="card">
+      <h2>8. Intellectual Property</h2>
+      <p>
+        Website content, including text, design, graphics, logos and other
+        materials, may be protected by applicable intellectual property
+        laws.
+      </p>
+      <p>
+        You may not copy, reproduce or distribute website content without
+        appropriate permission.
+      </p>
+    </section>
 
-    <h2>Payment</h2>
+    <section class="card">
+      <h2>9. Third-Party Services</h2>
+      <p>
+        My Shop may use third-party services such as payment providers,
+        analytics tools, advertising services or other external services.
+      </p>
+      <p>
+        Third-party services may have their own terms and privacy policies.
+      </p>
+    </section>
 
-    <p>
-      Payment methods and payment terms may vary depending on the
-      products and services offered by My Shop.
-    </p>
+    <section class="card">
+      <h2>10. Advertising</h2>
+      <p>
+        My Shop may display advertisements from third-party advertising
+        providers. These providers may use cookies or similar technologies
+        according to their own policies.
+      </p>
+    </section>
 
-    <h2>Delivery</h2>
+    <section class="card">
+      <h2>11. Disclaimer</h2>
+      <p>
+        We try to keep the website accurate and available, but we do not
+        guarantee that the website will always be error-free, uninterrupted
+        or completely up to date.
+      </p>
+    </section>
 
-    <p>
-      Delivery times may vary depending on location, availability and
-      the selected delivery method. Delays caused by circumstances
-      outside our control may occur.
-    </p>
+    <section class="card">
+      <h2>12. Changes to These Terms</h2>
+      <p>
+        My Shop may update these Terms & Conditions when the website,
+        products or services change. Updated terms will be published on
+        this page.
+      </p>
+    </section>
 
-    <h2>Intellectual Property</h2>
-
-    <p>
-      Website content, text, design and other materials belonging to
-      My Shop may not be copied, reproduced or used without permission.
-    </p>
-
-    <h2>Limitation of Liability</h2>
-
-    <p>
-      We aim to keep the information on this website accurate and
-      available, but we cannot guarantee that the website will always
-      be free from errors or interruptions.
-    </p>
-
-    <h2>Changes to These Terms</h2>
-
-    <p>
-      We may update these Terms & Conditions when our website or
-      services change. Updated terms will be published on this page.
-    </p>
-
-    <h2>Contact</h2>
-
-    <p>
-      If you have questions about these Terms & Conditions, please
-      visit our Contact Us page.
-    </p>
+    <section class="card">
+      <h2>13. Contact Us</h2>
+      <p>
+        If you have questions about these Terms & Conditions, please visit
+        our Contact Us page.
+      </p>
+      <p>
+        <a href="contact.html" style="color:#f85606;font-weight:bold;">
+          Contact My Shop
+        </a>
+      </p>
+    </section>
 
   </main>
 
   <footer>
-    <p>© 2026 My Shop</p>
-
     <p>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms & Conditions</a>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="refund.html">Refund Policy</a>
+    </p>
+
+    <p style="margin-top:15px;">
+      © 2026 My Shop. All rights reserved.
     </p>
   </footer>
 
