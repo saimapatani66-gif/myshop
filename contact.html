@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact Us - My Shop</title>
+  <meta name="description" content="Contact My Shop for questions, support, product information and online shopping assistance.">
+  <meta name="robots" content="index, follow">
+
+  <title>Contact Us | My Shop</title>
 
   <style>
     * {
@@ -16,99 +19,154 @@
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      color: #222;
+      color: #333;
       line-height: 1.6;
     }
 
-    header {
-      background: #111;
+    .topbar {
+      background: #f85606;
       color: white;
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px;
     }
 
-    header h2 {
-      font-size: 22px;
+    header {
+      background: white;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #f85606;
+      font-size: 26px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
     }
 
     nav a {
-      color: white;
+      color: #333;
       text-decoration: none;
-      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #f85606;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fff, #fff3ec);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 18px;
     }
 
     .container {
-      max-width: 700px;
+      max-width: 1050px;
       margin: 40px auto;
-      padding: 30px 25px;
+      padding: 0 20px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 25px;
+    }
+
+    .card {
       background: white;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 15px;
+    .card h2 {
+      color: #f85606;
+      margin-bottom: 18px;
     }
 
-    .intro {
-      text-align: center;
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    .contact-info {
-      background: #f5f5f5;
-      padding: 20px;
+    .info {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fff7f2;
       border-radius: 8px;
-      margin-bottom: 25px;
     }
 
-    .contact-info p {
-      margin: 8px 0;
+    .info strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
     }
 
     label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
+      font-weight: 600;
     }
 
     input,
     textarea {
       width: 100%;
       padding: 13px;
-      margin-bottom: 15px;
       border: 1px solid #ddd;
       border-radius: 7px;
-      font-size: 16px;
-      font-family: Arial, sans-serif;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #f85606;
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 150px;
       resize: vertical;
     }
 
     button {
-      width: 100%;
-      padding: 14px;
-      background: #111;
-      color: white;
       border: none;
+      background: #f85606;
+      color: white;
+      padding: 14px;
       border-radius: 7px;
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
     }
 
+    button:hover {
+      background: #d94700;
+    }
+
     footer {
-      background: #111;
-      color: white;
+      background: #222;
+      color: #ccc;
       text-align: center;
-      padding: 25px 15px;
+      padding: 30px 20px;
       margin-top: 50px;
     }
 
@@ -118,27 +176,28 @@
       margin: 0 8px;
     }
 
-    @media (max-width: 600px) {
+    footer a:hover {
+      color: #f85606;
+    }
+
+    @media (max-width: 700px) {
       header {
-        padding: 12px 15px;
+        flex-direction: column;
+        gap: 12px;
       }
 
-      header h2 {
-        font-size: 19px;
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      nav a {
-        font-size: 14px;
-        margin-left: 8px;
+      .hero h1 {
+        font-size: 32px;
       }
 
-      .container {
-        margin: 20px 12px;
-        padding: 25px 18px;
-      }
-
-      h1 {
-        font-size: 28px;
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -146,19 +205,113 @@
 
 <body>
 
+  <div class="topbar">
+    🛍️ Welcome to My Shop — We're Here to Help
+  </div>
+
   <header>
-    <h2>🛍️ My Shop</h2>
+    <a href="index.html" class="logo">🛒 My Shop</a>
 
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>Have a question? We'd love to hear from you.</p>
+  </section>
+
   <main class="container">
 
-    <h1>Contact Us</h1>
+    <div class="contact-grid">
 
-    <p class="intro">
-      Have a question about our products or your order?
-      We'd be happy to hear from you.
+      <section class="card">
+        <h2>Get in Touch</h2>
+
+        <p style="margin-bottom:20px;">
+          If you have questions about our products, orders or shopping
+          experience, please contact us using the information below.
+        </p>
+
+        <div class="info">
+          <strong>📧 Email</strong>
+          <span>support@myshop.com</span>
+        </div>
+
+        <div class="info">
+          <strong>📱 Phone</strong>
+          <span>Contact details will be updated soon.</span>
+        </div>
+
+        <div class="info">
+          <strong>🕒 Support Hours</strong>
+          <span>Monday – Saturday</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Send Us a Message</h2>
+
+        <form onsubmit="sendMessage(event)">
+
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message..." required></textarea>
+          </div>
+
+          <button type="submit">Send Message</button>
+
+        </form>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="refund.html">Refund Policy</a>
+    </p>
+
+    <p style="margin-top:15px;">
+      © 2026 My Shop. All rights reserved.
+    </p>
+
+  </footer>
+
+  <script>
+    function sendMessage(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+
+      alert(
+        "Thank you, " + name +
+        "! Your message has been received."
+      );
+
+      event.target.reset();
+    }
+  </script>
+
+</body>
+              </html>
