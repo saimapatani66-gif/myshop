@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About Us - My Shop</title>
+  <meta name="description" content="Learn more about My Shop - a modern online marketplace offering quality products at great prices.">
+  <meta name="robots" content="index, follow">
+
+  <title>About Us | My Shop</title>
 
   <style>
     * {
@@ -16,94 +19,151 @@
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      color: #222;
+      color: #333;
       line-height: 1.7;
     }
 
-    header {
-      background: #111;
+    .topbar {
+      background: #f85606;
       color: white;
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px;
     }
 
-    header h2 {
-      font-size: 22px;
+    header {
+      background: white;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #f85606;
+      font-size: 26px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
     }
 
     nav a {
-      color: white;
       text-decoration: none;
-      margin-left: 18px;
+      color: #333;
+      font-weight: 600;
     }
 
-    .container {
-      max-width: 850px;
-      margin: 40px auto;
-      padding: 35px 25px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    nav a:hover {
+      color: #f85606;
     }
 
-    h1 {
+    .hero {
+      background: linear-gradient(135deg, #fff, #fff3ec);
       text-align: center;
-      margin-bottom: 25px;
-      font-size: 34px;
+      padding: 70px 20px;
     }
 
-    h2 {
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-
-    p {
-      color: #555;
+    .hero h1 {
+      font-size: 42px;
+      color: #222;
       margin-bottom: 12px;
     }
 
-    footer {
-      background: #111;
-      color: white;
+    .hero p {
+      color: #666;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
+    }
+
+    .card h2 {
+      color: #f85606;
+      margin-bottom: 15px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background: white;
+      padding: 28px 20px;
       text-align: center;
-      padding: 25px 15px;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
+    }
+
+    .feature .icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
       margin-top: 50px;
     }
 
     footer a {
-      color: white;
+      color: #fff;
       text-decoration: none;
       margin: 0 8px;
     }
 
-    @media (max-width: 600px) {
+    footer a:hover {
+      color: #f85606;
+    }
+
+    @media (max-width: 700px) {
       header {
-        padding: 12px 15px;
+        flex-direction: column;
+        gap: 12px;
       }
 
-      header h2 {
-        font-size: 19px;
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      nav a {
-        margin-left: 8px;
-        font-size: 14px;
+      .hero h1 {
+        font-size: 32px;
       }
 
-      .container {
-        margin: 20px 12px;
-        padding: 25px 18px;
+      .features {
+        grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 20px;
+      .card {
+        padding: 25px 20px;
       }
     }
   </style>
@@ -111,63 +171,88 @@
 
 <body>
 
+  <div class="topbar">
+    🛍️ Welcome to My Shop — Quality Products at Great Prices
+  </div>
+
   <header>
-    <h2>🛍️ My Shop</h2>
+    <a href="index.html" class="logo">🛒 My Shop</a>
 
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>About My Shop</h1>
+    <p>Your simple and trusted online shopping destination.</p>
+  </section>
+
   <main class="container">
 
-    <h1>About Us</h1>
+    <section class="card">
+      <h2>Who We Are</h2>
+      <p>
+        My Shop is a modern online shopping platform created to make
+        online shopping simple, convenient and accessible. We aim to
+        provide customers with a smooth shopping experience and a
+        selection of useful products at competitive prices.
+      </p>
+    </section>
 
-    <p>
-      Welcome to My Shop. We are an online shopping website focused on
-      providing quality products at reasonable prices.
-    </p>
+    <section class="card">
+      <h2>Our Mission</h2>
+      <p>
+        Our mission is to make online shopping easier by providing
+        quality products, clear product information and a convenient
+        shopping experience for our customers.
+      </p>
+    </section>
 
-    <h2>Our Mission</h2>
+    <section class="card">
+      <h2>Why Choose My Shop?</h2>
 
-    <p>
-      Our mission is to make online shopping simple, convenient and
-      accessible for our customers.
-    </p>
+      <div class="features">
 
-    <h2>What We Offer</h2>
+        <div class="feature">
+          <div class="icon">🛍️</div>
+          <h3>Easy Shopping</h3>
+          <p>Browse products and add your favorite items to your cart.</p>
+        </div>
 
-    <p>
-      My Shop features a selection of everyday products including
-      clothing, footwear, electronics and useful accessories.
-    </p>
+        <div class="feature">
+          <div class="icon">💰</div>
+          <h3>Great Prices</h3>
+          <p>We aim to offer competitive prices across our product selection.</p>
+        </div>
 
-    <h2>Our Commitment</h2>
+        <div class="feature">
+          <div class="icon">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>Enjoy a clean shopping experience on phones, tablets and computers.</p>
+        </div>
 
-    <p>
-      We aim to provide clear product information, straightforward
-      shopping and a user-friendly experience on both mobile and desktop
-      devices.
-    </p>
-
-    <h2>Thank You</h2>
-
-    <p>
-      Thank you for visiting My Shop. We appreciate your interest and
-      hope you enjoy your shopping experience with us.
-    </p>
+      </div>
+    </section>
 
   </main>
 
   <footer>
-    <p>© 2026 My Shop</p>
-
     <p>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
+      <a href="index.html">Home</a> |
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="refund.html">Refund Policy</a>
+    </p>
+
+    <p style="margin-top:15px;">
+      © 2026 My Shop. All rights reserved.
     </p>
   </footer>
 
 </body>
-</html>
+  </html>
