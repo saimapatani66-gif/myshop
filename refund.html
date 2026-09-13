@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Refund & Return Policy - My Shop</title>
+  <meta name="description" content="Read the Refund Policy for My Shop, including returns, refunds, damaged products and order cancellation information.">
+  <meta name="robots" content="index, follow">
+
+  <title>Refund Policy | My Shop</title>
 
   <style>
     * {
@@ -16,70 +19,128 @@
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      color: #222;
+      color: #333;
       line-height: 1.7;
     }
 
-    header {
-      background: #111;
+    .topbar {
+      background: #f85606;
       color: white;
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px;
     }
 
-    header h2 {
-      font-size: 22px;
+    header {
+      background: white;
+      padding: 16px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #f85606;
+      font-size: 26px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
     }
 
     nav a {
-      color: white;
       text-decoration: none;
-      margin-left: 15px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: #f85606;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fff, #fff3ec);
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #666;
+      font-size: 18px;
     }
 
     .container {
-      max-width: 850px;
+      max-width: 1050px;
       margin: 40px auto;
-      padding: 35px 25px;
+      padding: 0 20px;
+    }
+
+    .card {
       background: white;
+      padding: 32px;
+      margin-bottom: 22px;
       border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 15px rgba(0,0,0,.06);
     }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 34px;
-    }
-
-    h2 {
-      margin-top: 25px;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    p {
-      color: #555;
+    .card h2 {
+      color: #f85606;
       margin-bottom: 12px;
+      font-size: 22px;
     }
 
-    ul {
-      margin: 10px 0 15px 25px;
+    .card p {
       color: #555;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      margin: 10px 0 10px 25px;
+      color: #555;
+    }
+
+    .notice {
+      background: #fff7f2;
+      border-left: 4px solid #f85606;
+      padding: 18px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: #f85606;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 7px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .contact-btn:hover {
+      background: #d94700;
     }
 
     footer {
-      background: #111;
-      color: white;
+      background: #222;
+      color: #ccc;
       text-align: center;
-      padding: 25px 15px;
+      padding: 30px 20px;
       margin-top: 50px;
-    }
-
-    footer p {
-      color: white;
     }
 
     footer a {
@@ -88,31 +149,28 @@
       margin: 0 8px;
     }
 
-    @media (max-width: 600px) {
+    footer a:hover {
+      color: #f85606;
+    }
+
+    @media (max-width: 700px) {
       header {
-        padding: 12px 15px;
+        flex-direction: column;
+        gap: 12px;
       }
 
-      header h2 {
-        font-size: 19px;
+      nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
-      nav a {
-        font-size: 14px;
-        margin-left: 8px;
+      .hero h1 {
+        font-size: 32px;
       }
 
-      .container {
-        margin: 20px 12px;
-        padding: 25px 18px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 19px;
+      .card {
+        padding: 25px 20px;
       }
     }
   </style>
@@ -120,8 +178,12 @@
 
 <body>
 
+  <div class="topbar">
+    🛍️ Welcome to My Shop — Shop Smart, Shop Easy
+  </div>
+
   <header>
-    <h2>🛍️ My Shop</h2>
+    <a href="index.html" class="logo">🛒 My Shop</a>
 
     <nav>
       <a href="index.html">Home</a>
@@ -130,37 +192,135 @@
     </nav>
   </header>
 
+  <section class="hero">
+    <h1>Refund Policy</h1>
+    <p>Information about returns, refunds and order cancellations.</p>
+  </section>
+
   <main class="container">
 
-    <h1>Refund & Return Policy</h1>
+    <section class="card">
+      <h2>1. Introduction</h2>
+      <p>
+        At My Shop, we aim to provide a smooth and reliable shopping
+        experience. This Refund Policy explains the general conditions
+        that may apply to returns, cancellations and refunds.
+      </p>
+    </section>
 
+    <section class="card">
+      <h2>2. Order Cancellation</h2>
+      <p>
+        Customers may request cancellation of an order before it has been
+        processed or shipped.
+      </p>
+      <p>
+        Once an order has been processed or shipped, cancellation may not
+        be possible.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>3. Returns</h2>
+      <p>
+        Return eligibility may depend on the product, its condition and
+        the reason for the return.
+      </p>
+
+      <ul>
+        <li>The product should generally be unused and in suitable condition.</li>
+        <li>Original packaging and accessories may be required.</li>
+        <li>Return requests should be submitted within the applicable return period.</li>
+      </ul>
+
+      <div class="notice">
+        Return conditions may vary depending on the product and seller.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>4. Damaged or Incorrect Products</h2>
+      <p>
+        If you receive a damaged, defective or incorrect product, please
+        contact us as soon as possible with relevant order details.
+      </p>
+      <p>
+        Additional information or photographs may be requested to help
+        review the issue.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>5. Refunds</h2>
+      <p>
+        If a refund is approved, the refund method and processing time may
+        depend on the original payment method and the relevant payment
+        provider.
+      </p>
+      <p>
+        Refunds will only be processed after the applicable request has
+        been reviewed and approved.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>6. Non-Refundable Situations</h2>
+      <p>
+        Some products or situations may not qualify for a refund. This can
+        include products that have been used, damaged after delivery,
+        modified by the customer or returned without required accessories.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>7. Processing Time</h2>
+      <p>
+        Refund and return processing times may vary depending on the order,
+        shipping process and payment provider.
+      </p>
+      <p>
+        We will try to process approved requests as efficiently as
+        reasonably possible.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>8. Changes to This Policy</h2>
+      <p>
+        My Shop may update this Refund Policy when our products, services
+        or business processes change. Any updated version will be
+        published on this page.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>9. Contact Us</h2>
+      <p>
+        If you have questions about a return or refund, please contact us
+        through our Contact Us page.
+      </p>
+
+      <a href="contact.html" class="contact-btn">
+        Contact My Shop
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
     <p>
-      At My Shop, we want our customers to have a positive shopping
-      experience. This policy explains how returns and refunds may be
-      handled.
+      <a href="index.html">Home</a> |
+      <a href="about.html">About Us</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="refund.html">Refund Policy</a>
     </p>
 
-    <h2>Returns</h2>
-
-    <p>
-      Customers may request a return if a product is damaged, defective,
-      or significantly different from the product description.
+    <p style="margin-top:15px;">
+      © 2026 My Shop. All rights reserved.
     </p>
+  </footer>
 
-    <h2>Return Conditions</h2>
-
-    <ul>
-      <li>The product should be in reasonable condition.</li>
-      <li>The customer should contact us as soon as possible.</li>
-      <li>Proof of purchase or order details may be required.</li>
-      <li>Some products may not be eligible for return.</li>
-    </ul>
-
-    <h2>Refunds</h2>
-
-    <p>
-      If a return is approved, the refund method and processing time
-      will depend on the payment method used for the order.
-    </p>
-
-    <h2>Damaged
+</body>
+</html>
